@@ -150,7 +150,25 @@
                 }
             })
             .then(data => {
-                showMessage('User added successfully!', 'success');
+                messageDiv.innerHTML = '';
+                let link = document.createElement('a');
+                link.href = '/' + data.id;
+                link.textContent = 'https://wedding.holesgarden.com/' + data.id;
+                link.target = '_blank';
+                // add copy to clipboard functionality
+                link.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    navigator.clipboard.writeText(link.href)
+                        .then(() => {
+                            showMessage('Link copied to clipboard!', 'success');
+                        })
+                        .catch(err => {
+                            showMessage('Failed to copy link: ' + err.message, 'error');
+                        });
+                });
+                messageDiv.appendChild(document.createTextNode('User added successfully! Link: '));
+                messageDiv.appendChild(link);
+                // showMessage('User added successfully!', 'success');
                 document.getElementById('userForm').reset();
             })
             .catch(error => {

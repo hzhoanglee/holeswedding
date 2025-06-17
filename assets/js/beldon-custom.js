@@ -266,10 +266,12 @@ $(function() {
       timer: false,
       delay: 8000,
       transition: 'fade2',
-      transitionDuration: 2000,
+      transitionDuration: 3000,
       slides: [
+        { src: "/anhcuoi/22.jpg" },
         { src: "/anhcuoi/main.jpg" },
-
+        { src: "/anhcuoi/2.jpg" },
+        { src: "/anhcuoi/10.jpg" },
       ],
       animation: [ 'kenburnsUp', 'kenburnsDown', 'kenburnsLeft', 'kenburnsRight' ]
     });

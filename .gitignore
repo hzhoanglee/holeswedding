@@ -107,3 +107,4 @@ fabric.properties
 .test.db
 .env
 .DS_Store
+tmp/
